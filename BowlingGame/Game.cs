@@ -9,7 +9,7 @@
         {
             rolls = new int[21];
         }
-
+        
         public void Roll(int pins)
         {
             rolls[currentRoll++] = pins;
@@ -21,7 +21,7 @@
             int frameIndex = 0;
             for (int frame = 0; frame < 10; frame++)
             {
-                if (IsStrike(frameIndex))
+                if (IsStrike(frameIndex)) 
                 {
                     score += 10 + StrikeBonus(frameIndex);
                     frameIndex++;
@@ -33,7 +33,7 @@
                 }
                 else
                 {
-                    score += SumOfBallsInFrame(frameIndex); 
+                    score += SumOfBallsInFrame(frameIndex);
                     frameIndex += 2;
                 }
             }
@@ -47,12 +47,12 @@
 
         private int SumOfBallsInFrame(int frameIndex)
         {
-            return rolls[frameIndex] + rolls[frameIndex+1];
+            return rolls[frameIndex] + rolls[frameIndex + 1];
         }
 
         private int SpareBonus(int frameIndex)
         {
-             return rolls[frameIndex + 2];
+            return rolls[frameIndex + 2];
         }
 
         private int StrikeBonus(int frameIndex)

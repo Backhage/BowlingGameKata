@@ -16,7 +16,7 @@ namespace BowlingGameTest
 
         private void RollMany(int n, int pins)
         {
-            for (var i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
                 g.Roll(pins);
             }
@@ -42,6 +42,7 @@ namespace BowlingGameTest
             RollSpare();
             g.Roll(3);
             RollMany(17, 0);
+
             Assert.AreEqual(16, g.Score());
         }
 
@@ -52,6 +53,7 @@ namespace BowlingGameTest
             g.Roll(3);
             g.Roll(4);
             RollMany(16, 0);
+
             Assert.AreEqual(24, g.Score());
         }
 
@@ -64,7 +66,7 @@ namespace BowlingGameTest
 
         private void RollStrike()
         {
-            g.Roll(10); 
+            g.Roll(10);
         }
 
         private void RollSpare()
